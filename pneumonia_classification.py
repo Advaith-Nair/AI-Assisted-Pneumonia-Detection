@@ -13,8 +13,7 @@ try:
         return img_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
     
-    relative_path = r"CNN Pneumonia\saved_model.pb"
-    model = tf.keras.models.load_model('CNN Pneumonia')
+    model = tf.keras.models.load_model(r"/app/ai-assisted-pneumonia-detection/pneumonia_classification.py")
     st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
     uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
     if uploaded_file is not None:
