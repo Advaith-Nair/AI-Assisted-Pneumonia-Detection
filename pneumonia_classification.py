@@ -4,7 +4,7 @@ import streamlit as st
 from PIL import Image
 import time
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
-relpath = r"app/CNN Pneumonia/saved_model.pb"
+relpath = r"C:\Users\Advaith Nair\OneDrive\Desktop\Advaith\School\Grade XII\AI\Bootcamp\AI Assisted Medical Diagnosis\CNN Pneumonia\saved_model.pb"
 def prepare(filepath):
     IMG_SIZE = 64
     img_array = cv2.imread(filepath,cv2.IMREAD_GRAYSCALE)
