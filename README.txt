@@ -5,4 +5,7 @@ Required Prerequisites - Installation of the necessary modules mentioned in the 
  Dataset used for training the model can be downloaded from the link given below
  https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
  IMPORTANT: ADD THE PATH WITHOUT QUOTES
- 
+ Make sure to change the directory of all the paths to the data/ modules to a suitable directory in your system.
+ We hope this model helps you!
+ Thank You
+ Advaith Nair and Atharv Raghuwanshi
