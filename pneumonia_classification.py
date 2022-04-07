@@ -12,8 +12,8 @@ try:
         img_array = cv2.resize(img_array,(IMG_SIZE,IMG_SIZE))
         return img_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
-
-
+    
+    relative_path = r"CNN Pneumonia\saved_model.pb"
     model = tf.keras.models.load_model('CNN Pneumonia')
     st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
     uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
