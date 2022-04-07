@@ -4,7 +4,7 @@ import streamlit as st
 from PIL import Image
 import time
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
-relpath = r"C:\Users\Advaith Nair\OneDrive\Desktop\Advaith\School\Grade XII\AI\Bootcamp\AI Assisted Medical Diagnosis\CNN Pneumonia.h5"
+relpath = r"C:\Users\Advaith Nair\OneDrive\Desktop\Advaith\School\Grade XII\AI\Bootcamp\AI Assisted Medical Diagnosis\CNN Pneumonia-2.h5"
 def prepare(filepath):
     IMG_SIZE = 64
     img_array = cv2.imread(filepath,cv2.IMREAD_GRAYSCALE)
@@ -13,7 +13,7 @@ def prepare(filepath):
 
 
 
-model = tf.keras.models.load_model('CNN Pneumonia-2')
+model = tf.keras.models.load_model(relpath)
 st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
 uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
 if uploaded_file is not None:
