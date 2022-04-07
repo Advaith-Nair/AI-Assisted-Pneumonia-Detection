@@ -1,0 +1,6 @@
+tensorflow==2.8.0
+opencv-python==4.5.5.64
+numpy==1.22.3
+keras==2.8.0
+streamlit==1.8.0
+matplotlib==3.5.1
