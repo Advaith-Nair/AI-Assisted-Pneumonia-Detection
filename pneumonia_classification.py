@@ -13,7 +13,7 @@ def prepare(img):
     #image sizing
     size = (224, 224)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
-    st.write(image.shape())
+    st.write(image.shape)
     #Next, turn the image into a numpy array
     image_array = np.asarray(image)
 
