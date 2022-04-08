@@ -15,11 +15,11 @@ def prepare(img):
     new_data = np.array(data)
     new_data.shape
     new_data.dtype
-    newa[0].shape
+    new_data[0].shape
     (224, 224, 3)
-    newa[1].shape
+    new_data[1].shape
     (224, 224, 3)
-    newa[2].shape
+    new_dataa[2].shape
     (10, 224, 3)
     image = img
     #image sizing
