@@ -31,5 +31,6 @@ if uploaded_file is not None:
         time.sleep(10)
         st.write('There was an error. Please try again later or refresh the page.'
                 ' Make sure to enter the data accurately and put the path WITHOUT quotes')
+        st.write(e)
 else:
     print()
