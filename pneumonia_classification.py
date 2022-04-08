@@ -37,7 +37,7 @@ if uploaded_file is not None:
         st.image(image, caption='This is your uploaded file')
         predicted_val = teachable_machine_classification(image)
         if predicted_val == 0:
-            st.title('NO ISSUE DETECTED.)
+            st.title('NO ISSUE DETECTED.')
             st.write(Lungs seem to be healthy.')
         else:
             st.title('PNEUMONIA DETECTED.')
