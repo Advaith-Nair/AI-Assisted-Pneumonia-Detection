@@ -11,14 +11,20 @@ def prepare(img):
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     image = img
     #image sizing
-    size = 64
+    size = (224, 224)
+    image = ImageOps.fit(image, size, Image.ANTIALIAS)
+
+    #Next, turn the image into a numpy array
     image_array = np.asarray(image)
+    # Normalize the image
+    normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
     # Load the image into the array
+    data[0] = normalized_image_array
 
     # run it
     prediction = model.predict(data)
-    return np.argmax(prediction)
+    return np.argmax(prediction) 
 
 
 
