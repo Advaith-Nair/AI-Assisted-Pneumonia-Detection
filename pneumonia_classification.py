@@ -12,9 +12,9 @@ def prepare(img):
     data = [np.zeros((224,224,3)), np.zeros((224,224,3)), np.zeros((10,224,3))]
     np.array(data)
 # long output omitted
-    newa = np.array(a)
-    newa.shape
-    newa.dtype
+    new_data = np.array(data)
+    new_data.shape
+    new_data.dtype
     dtype('O')
     newa[0].shape
     (224, 224, 3)
@@ -33,10 +33,10 @@ def prepare(img):
     normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
     # Load the image into the array
-    data[0] = normalized_image_array
+    new_data[0] = normalized_image_array
 
     # run it
-    prediction = model.predict(data)
+    prediction = model.predict(new_data)
     return np.argmax(prediction)
 
 
