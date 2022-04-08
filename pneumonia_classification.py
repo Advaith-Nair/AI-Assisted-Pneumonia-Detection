@@ -8,7 +8,8 @@ import numpy as np
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
 def prepare(img):
-    data = np.array()
+    data = []
+    data = np.array(data)
     image = img
     #image sizing
     size = (224, 224)
