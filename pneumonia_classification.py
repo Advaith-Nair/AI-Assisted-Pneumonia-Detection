@@ -13,7 +13,7 @@ def prepare(img):
     #image sizing
     size = (224, 224)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
-
+    st.write(image.shape())
     #Next, turn the image into a numpy array
     image_array = np.asarray(image)
 
@@ -43,7 +43,7 @@ if uploaded_file is not None:
             st.write('Please consult a medical expert.')
     
     except Exception as e:
-        time.sleep(10)
+        time.sleep(5)
         st.write('There was an error. Please try again later or refresh the page.'
                 ' Make sure to enter the data accurately and put the path WITHOUT quotes')
         st.write(e)
