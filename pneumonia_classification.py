@@ -13,7 +13,7 @@ def prepare(filepath):
 
 
 
-model = tf.keras.models.load_model(r"/app/ai-assisted-pneumonia-detection/CNN Pneumonia-2.h5")
+model = tf.keras.models.load_model("CNN Pneumonia-2")
 st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
 uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
 if uploaded_file is not None:
