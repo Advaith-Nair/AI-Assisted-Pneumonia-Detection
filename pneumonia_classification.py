@@ -18,9 +18,9 @@ def prepare(img):
     dtype('O')
     newa[0].shape
     (224, 224, 3)
-     newa[1].shape
+    newa[1].shape
     (224, 224, 3)
-     newa[2].shape
+    newa[2].shape
     (10, 224, 3)
     image = img
     #image sizing
