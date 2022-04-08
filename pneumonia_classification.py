@@ -5,8 +5,7 @@ import streamlit as st
 from PIL import Image
 import time
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
-path = os.listdir
-def prepare(filepath):
+
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     image = img
     #image sizing
@@ -47,5 +46,6 @@ if uploaded_file is not None:
         time.sleep(10)
         st.write('There was an error. Please try again later or refresh the page.'
                 ' Make sure to enter the data accurately and put the path WITHOUT quotes')
+        st.write(e)
 else:
     print()
