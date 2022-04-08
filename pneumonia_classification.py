@@ -33,7 +33,6 @@ st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
 uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
 if uploaded_file is not None:
     try:
-        path = st.text_input('Add the path to your image without quotes')
         image = Image.open(uploaded_file)
         st.image(image, caption='This is your uploaded file')
         predicted_val = prepare(image)
