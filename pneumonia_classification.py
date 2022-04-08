@@ -11,8 +11,8 @@ def prepare(img):
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     image = img
     #image sizing
-    size = 224
-    image = ImageOps.fit(image,size,size, 3)
+    size = (224, 224)
+    image = ImageOps.fit(image,size, 3)
 
     #Next, turn the image into a numpy array
     image_array = np.ndarray(image, shape = (1,224,224,3),dtype = np.float32)
