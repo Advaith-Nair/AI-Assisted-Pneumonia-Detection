@@ -17,7 +17,6 @@ def prepare(img):
     image_array = np.asarray(image)
 
     # Load the image into the array
-    data[0] = image_array
 
     # run it
     prediction = model.predict(data)
