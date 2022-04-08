@@ -4,6 +4,7 @@ import tensorflow as tf
 import streamlit as st
 from PIL import Image
 import time
+import numpy as np
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
 def prepare(img):
