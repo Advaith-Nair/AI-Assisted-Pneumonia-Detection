@@ -19,7 +19,7 @@ def prepare(img):
     (224, 224, 3)
     new_data[1].shape
     (224, 224, 3)
-    new_dataa[2].shape
+    new_data[2].shape
     (10, 224, 3)
     image = img
     #image sizing
