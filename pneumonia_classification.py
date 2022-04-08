@@ -22,7 +22,7 @@ def prepare(img):
 
     # Load the image into the array
     np.append(data,normalized_image_array)
-
+    st.write(data)
     # run it
     prediction = model.predict(data)
     return np.argmax(prediction) 
