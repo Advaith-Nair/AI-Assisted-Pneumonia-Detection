@@ -6,7 +6,7 @@ from PIL import Image
 import time
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
-def prepare(img)
+def prepare(img):
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     image = img
     #image sizing
