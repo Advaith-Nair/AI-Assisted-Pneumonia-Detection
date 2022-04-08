@@ -12,8 +12,6 @@ def prepare(img):
     image = img
     #image sizing
     size = 64
-    image = ImageOps.fit(image, size, size, Image.ANTIALIAS )
-    #Next, turn the image into a numpy array
     image_array = np.asarray(image)
 
     # Load the image into the array
