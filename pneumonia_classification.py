@@ -15,7 +15,6 @@ def prepare(img):
     new_data = np.array(data)
     new_data.shape
     new_data.dtype
-    dtype('O')
     newa[0].shape
     (224, 224, 3)
     newa[1].shape
