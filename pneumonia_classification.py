@@ -1,15 +1,29 @@
+import os
 import cv2
 import tensorflow as tf
 import streamlit as st
 from PIL import Image
 import time
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
-relpath = r"C:\Users\Advaith Nair\OneDrive\Desktop\Advaith\School\Grade XII\AI\Bootcamp\AI Assisted Medical Diagnosis\CNN Pneumonia-2.h5"
+path = os.listdir
 def prepare(filepath):
-    IMG_SIZE = 64
-    img_array = cv2.imread(filepath,cv2.IMREAD_GRAYSCALE)
-    img_array = cv2.resize(img_array,(IMG_SIZE,IMG_SIZE))
-    return img_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
+    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+    image = img
+    #image sizing
+    size = (224, 224)
+    image = ImageOps.fit(image, size, Image.ANTIALIAS)
+
+    #Next, turn the image into a numpy array
+    image_array = np.asarray(image)
+    # Normalize the image
+    normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
+
+    # Load the image into the array
+    data[0] = normalized_image_array
+
+    # run it
+    prediction = model.predict(data)
+    return np.argmax(prediction)
 
 
 
@@ -21,12 +35,13 @@ if uploaded_file is not None:
         path = st.text_input('Add the path to your image without quotes')
         image = Image.open(uploaded_file)
         st.image(image, caption='This is your uploaded file')
-        prediction = model.predict([prepare(path)])
-        outcome = (CATEGORIES[int(prediction[0][0])])
-        if outcome =='PNEUMONIA':
-            st.write('PNEUMONIA DETECTED. Please consult a medical expert')
+        predicted_val = teachable_machine_classification(image)
+        if predicted_val = 0:
+            st.title('NO ISSUE DETECTED.)
+            st.write(Lungs seem to be healthy.')
         elif outcome == 'NORMAL':
-            st.write('NO ISSUE DETECTED. Lungs seem to be normal.')
+            st.title('PNEUMONIA DETECTED.')
+            st.write('Please consult a medical expert.')
     
     except Exception as e:
         time.sleep(10)
