@@ -13,11 +13,11 @@ def prepare(filepath):
 
 
 model = tf.keras.models.load_model("CNN Pneumonia-2")
-st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
+st.title('Hello this model aims at identifying pneumonia by looking at X-rays. PLEASE ADD YOUR FILE TO THE GIVEN GITHUB REPOSITORY BEFORE EXECUTING.IF YOU DO NOT DO SO THERE WILL BE AN ERROR ')
 uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
 if uploaded_file is not None:
     try:
-        path = st.text_input('LOAD YOU IMAGE TO THE GET REPO AND TYPE ITS RELATIVE PATH ')
+        path = st.text_input('Type the file name')
         image = Image.open(uploaded_file)
         st.image(image, caption='This is your uploaded file')
         prediction = model.predict([prepare(path)])
@@ -31,6 +31,5 @@ if uploaded_file is not None:
         time.sleep(10)
         st.write('There was an error. Please try again later or refresh the page.'
                 ' Make sure to enter the data accurately and put the path WITHOUT quotes')
-        st.write(e)
 else:
     print()
