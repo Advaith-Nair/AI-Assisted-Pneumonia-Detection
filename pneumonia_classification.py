@@ -36,10 +36,10 @@ if uploaded_file is not None:
         image = Image.open(uploaded_file)
         st.image(image, caption='This is your uploaded file')
         predicted_val = teachable_machine_classification(image)
-        if predicted_val = 0:
+        if predicted_val == 0:
             st.title('NO ISSUE DETECTED.)
             st.write(Lungs seem to be healthy.')
-        elif outcome == 'NORMAL':
+        else:
             st.title('PNEUMONIA DETECTED.')
             st.write('Please consult a medical expert.')
     
