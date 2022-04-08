@@ -9,22 +9,10 @@ CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
 def prepare(img):
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-    data = [np.zeros((224,224,3)), np.zeros((224,224,3)), np.zeros((10,224,3))]
-    np.array(data)
-# long output omitted
-    new_data = np.array(data)
-    new_data.shape
-    new_data.dtype
-    new_data[0].shape
-    (224, 224, 3)
-    new_data[1].shape
-    (224, 224, 3)
-    new_data[2].shape
-    (10, 224, 3)
     image = img
     #image sizing
-    size = (224, 224)
-    image = ImageOps.fit(image, size, Image.ANTIALIAS)
+    size = 64
+    image = ImageOps.fit(image, size,size, Image.ANTIALIAS)
 
     #Next, turn the image into a numpy array
     image_array = np.asarray(image)
@@ -32,10 +20,10 @@ def prepare(img):
     normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
     # Load the image into the array
-    new_data[0] = normalized_image_array
+    data[0] = normalized_image_array
 
     # run it
-    prediction = model.predict(new_data)
+    prediction = model.predict(data)
     return np.argmax(prediction)
 
 
