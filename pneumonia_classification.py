@@ -9,7 +9,7 @@ CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
 def prepare(img):
     data = []
-    data = np.array(data)
+    
     image = img
     #image sizing
     size = (224, 224)
@@ -21,7 +21,8 @@ def prepare(img):
     normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
     # Load the image into the array
-    np.append(data,normalized_image_array)
+    data.append(normalized_image_array)
+    data = np.array(data)
     st.write(data)
     # run it
     prediction = model.predict(data)
