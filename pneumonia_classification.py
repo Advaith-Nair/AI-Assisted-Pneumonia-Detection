@@ -9,8 +9,8 @@ CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
 def prepare(img):
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-    a = [np.zeros((224,224,3)), np.zeros((224,224,3)), np.zeros((10,224,3))]
-    np.array(a)
+    data = [np.zeros((224,224,3)), np.zeros((224,224,3)), np.zeros((10,224,3))]
+    np.array(data)
 # long output omitted
      newa = np.array(a)
       newa.shape
