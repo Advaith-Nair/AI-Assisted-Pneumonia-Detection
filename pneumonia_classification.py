@@ -2,7 +2,7 @@ import os
 import cv2
 import tensorflow as tf
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageOps
 import time
 import numpy as np
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
