@@ -9,6 +9,19 @@ CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
 def prepare(img):
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+    a = [np.zeros((224,224,3)), np.zeros((224,224,3)), np.zeros((10,224,3))]
+    np.array(a)
+# long output omitted
+     newa = np.array(a)
+      newa.shape
+    newa.dtype
+    dtype('O')
+    newa[0].shape
+    (224, 224, 3)
+     newa[1].shape
+    (224, 224, 3)
+     newa[2].shape
+    (10, 224, 3)
     image = img
     #image sizing
     size = (224, 224)
