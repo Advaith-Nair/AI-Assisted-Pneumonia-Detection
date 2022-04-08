@@ -12,8 +12,8 @@ def prepare(img):
     data = [np.zeros((224,224,3)), np.zeros((224,224,3)), np.zeros((10,224,3))]
     np.array(data)
 # long output omitted
-     newa = np.array(a)
-      newa.shape
+    newa = np.array(a)
+    newa.shape
     newa.dtype
     dtype('O')
     newa[0].shape
