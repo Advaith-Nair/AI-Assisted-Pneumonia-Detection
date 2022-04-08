@@ -8,14 +8,14 @@ import numpy as np
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
 def prepare(img):
-    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+    data = np.array(shape=(1, 224, 224, 3), dtype=np.float32)
     image = img
     #image sizing
     size = (224, 224)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
 
     #Next, turn the image into a numpy array
-    image_array = np.ndarray(image)
+    image_array = np.array(image)
     # Normalize the image
     normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
