@@ -21,7 +21,7 @@ def prepare(img):
     normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
     # Load the image into the array
-    data[0] = normalized_image_array
+    data.append(normalized_image_array)
 
     # run it
     prediction = model.predict(data)
