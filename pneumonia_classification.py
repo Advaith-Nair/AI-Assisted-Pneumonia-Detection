@@ -11,11 +11,12 @@ def prepare(file):
     img_array = np.array(file)
     img_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
     return img_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
+st.set_page_config(page_title='X-Classifier - Pneumonia Detector', page_icon='❎')
 info = st.checkbox("Do you want to know more about pneumonia?")
 if info:
         st.write('Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.')
         st.write("Click this link to know more: https://www.who.int/news-room/fact-sheets/detail/pneumonia")
-st.set_page_config(page_title='X-Classifier - Pneumonia Detector', page_icon='❎')
+
 model = tf.keras.models.load_model('CNN Pneumonia-2')
 st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
 uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
