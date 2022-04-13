@@ -7,7 +7,11 @@ import numpy as np
 
 CATEGORIES = ["NORMAL", "PNEUMONIA"]
 
+info = st.checkbox("Do you want to know more about pneumonia?")
 
+if info:
+     st.write('Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.')
+     st.write("Click this link to know more: https://www.who.int/news-room/fact-sheets/detail/pneumonia")
 def prepare(file):
     IMG_SIZE = 64
     img_array = np.array(file)
