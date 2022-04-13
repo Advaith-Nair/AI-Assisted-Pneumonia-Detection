@@ -11,6 +11,7 @@ def prepare(file):
     img_array = np.array(file)
     img_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
     return img_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
+st.title('Hello! This is an application that aims at identifying pneumonia by looking at X-rays. Please upload the necessary files so that we may be able to detect pneumonia accurately.')
 st.set_page_config(page_title='X-Classifier - Pneumonia Detector', page_icon='❎')
 info = st.checkbox("Do you want to know more about pneumonia?")
 if info:
@@ -18,7 +19,7 @@ if info:
         st.write("Click this link to know more: https://www.who.int/news-room/fact-sheets/detail/pneumonia")
 
 model = tf.keras.models.load_model('CNN Pneumonia-2')
-st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
+
 uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
 if uploaded_file is not None:
     try: 
