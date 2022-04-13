@@ -14,7 +14,7 @@ def prepare(file):
     img_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
     return img_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
-
+st.set_page_config(page_title='X-Classifier - Pneumonia Detector', page_icon='🩺')
 model = tf.keras.models.load_model('CNN Pneumonia-2')
 st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
 uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
