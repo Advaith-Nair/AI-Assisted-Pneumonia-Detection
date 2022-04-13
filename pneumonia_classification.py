@@ -27,8 +27,7 @@ if uploaded_file is not None:
         with st.spinner('Classifying image...'):
             time.sleep(5)
         if outcome == 'NORMAL':
-            st.snow()
-            st.success('NO ISSUE DETECTED. Lungs seem to be normal')
+            st.markdown('NO ISSUE DETECTED. Lungs seem to be normal')
         elif outcome == 'PNEUMONIA':
             st.warning('PNEUMONIA DETECTED. Please consult a medical expert')
 
