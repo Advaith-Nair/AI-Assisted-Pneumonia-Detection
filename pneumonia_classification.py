@@ -18,6 +18,9 @@ st.title('Hello this model aims at identifying pneumonia by looking at X-rays.')
 uploaded_file = st.file_uploader(label="Please upload your X-Ray", type=["JPEG", "JPG", "PNG"])
 if uploaded_file is not None:
     try:
+     if info:
+         st.write('Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.')
+         st.write("Click this link to know more: https://www.who.int/news-room/fact-sheets/detail/pneumonia")
         image = Image.open(uploaded_file)
         st.image(image, caption='This is your uploaded file')
         prediction = model.predict([prepare(image)])
@@ -37,6 +40,4 @@ else:
     print()
 info = st.checkbox("Do you want to know more about pneumonia?")
 
-if info:
-     st.write('Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.')
-     st.write("Click this link to know more: https://www.who.int/news-room/fact-sheets/detail/pneumonia")
+
