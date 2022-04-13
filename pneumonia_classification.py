@@ -25,9 +25,9 @@ if uploaded_file is not None:
         prediction = model.predict([prepare(image)])
         outcome = (CATEGORIES[int(prediction[0][0])])
         if outcome == 'NORMAL':
-            st.write('NO ISSUE DETECTED. Lungs seem to be normal')
+            st.success('NO ISSUE DETECTED. Lungs seem to be normal')
         elif outcome == 'PNEUMONIA':
-            st.write('PNEUMONIA DETECTED. Please consult a medical expert')
+            st.warning('PNEUMONIA DETECTED. Please consult a medical expert')
 
     except Exception as e:
         time.sleep(10)
