@@ -24,9 +24,8 @@ if uploaded_file is not None:
         st.image(image, caption='This is your uploaded file')
         prediction = model.predict([prepare(image)])
         outcome = (CATEGORIES[int(prediction[0][0])])
-        with st.spinner('Wait for it...'):
-            time.sleep(3)
-            st.success('Done!')
+        with st.spinner('Classifying image...'):
+            time.sleep(5)
         if outcome == 'NORMAL':
             st.success('NO ISSUE DETECTED. Lungs seem to be normal')
         elif outcome == 'PNEUMONIA':
